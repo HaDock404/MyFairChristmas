@@ -9,15 +9,20 @@ import {
 import './styles/normalize.css'
 import GlobalStyle from './styles/createGlobalStyle.jsx'
 
-import App from './components/App';
 import Header from './components/Header';
+import Home from './components/Home';
+import Body from './components/Body';
+import Bodybis from './components/Bodybis';
+import Footer from './components/Footer';
+import Quizz from './pages/Quizz';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
         <GlobalStyle/>
         <Routes>
-          <Route path="/" element={<><Header/><App/></>}/>
+          <Route path="/" element={<><Header/><Home/><Body/><Bodybis/><Footer/></>}/>
+          <Route path="/positionnement" element={<><Header/><Quizz/><Footer/></>}/>
         </Routes>
   </BrowserRouter>,
 );

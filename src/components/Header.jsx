@@ -40,7 +40,7 @@ function Header() {
         <CardHeader>
             <CardLink to="/">
                 <CardImg src={logo} alt="logo"/>
-                <CardTitle>Mon Noel équitable</CardTitle>
+                <CardTitle>My Fair Christmas</CardTitle>
             </CardLink>
         </CardHeader>
         

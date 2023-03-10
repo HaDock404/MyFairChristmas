@@ -8,6 +8,7 @@ import island from '../assets/island.jpeg'
 import knife from '../assets/knife.png'
 import family from '../assets/family.png'
 import train from '../assets/train.jpeg'
+import { useState } from "react"
 
 const CardArticle = styled.article`
     display: flex;
@@ -22,6 +23,7 @@ const CardTitle = styled.h2`
     padding: 20px;
     color: red;
     font-size: 40px;
+    text-align: center;
 `
 
 const CardForm = styled.form`
@@ -54,17 +56,28 @@ const CardButton = styled.button`
 `
 
 function Quizz() {
+
+    const [sum, setSum] = useState(0)
+    const [value, setValue] = useState({ gender: 0, island: 0, animal: 0, knife: 0, family: 0, train: 0})
+
+    function submit(e) {
+        e.preventDefault()
+        setSum(sum + value.gender + value.island + value.animal + value.knife + value.family + value.train)
+    }
+    
+    console.log(value)
+    
     return (
         <CardArticle>
             <CardTitle>Cochez la réponse qui correspond le mieux à l'enfant. Répondez rapidement et honnêtement.</CardTitle>
-            <CardForm onSubmit={()=>console.log("ok")}>
+            <CardForm onSubmit={submit}>
                 <CardGrid>
-                    <Card picture={gender} name="gender" value1="0" value2="0" value3="0" label1="Géométrie" label2="Genre" label3="Vaisselle"/>
-                    <Card picture={island} name="island" value1="0" value2="0" value3="0" label1="Fuite" label2="Solitude" label3="Télé-réalité"/>
-                    <Card picture={dog} name="animal" value1="0" value2="0" value3="0" label1="Compagnon" label2="Urine" label3="Amant"/>
-                    <Card picture={knife} name="knife" value1="0" value2="0" value3="0" label1="Solution" label2="Danger" label3="Sushis"/>
-                    <Card picture={family} name="family" value1="0" value2="0" value3="0" label1="Mort" label2="Rêve" label3="Crainte"/>
-                    <Card picture={train} name="family" value1="0" value2="0" value3="0" label1="Confiance" label2="Désespoir" label3="Vacances"/>
+                    <Card picture={gender} id="test" name="gender" value1={0} value2={10} value3={5} label1="Géométrie" label2="Genre" label3="Vaisselle" onChange={(e)=> setValue(value =>({...value, ...{gender: parseInt(e.target.defaultValue)}}))}/>
+                    <Card picture={island} name="island" value1={5} value2={10} value3={0} label1="Fuite" label2="Solitude" label3="Télé-réalité" onChange={(e)=> setValue(value =>({...value, ...{island: parseInt(e.target.defaultValue)}}))}/>
+                    <Card picture={dog} name="animal" value1={10} value2={5} value3={0} label1="Compagnon" label2="Urine" label3="Amant" onChange={(e)=> setValue(value =>({...value, ...{animal: parseInt(e.target.defaultValue)}}))}/>
+                    <Card picture={knife} name="knife" value1={5} value2={10} value3={0} label1="Solution" label2="Danger" label3="Sushis" onChange={(e)=> setValue(value =>({...value, ...{knife: parseInt(e.target.defaultValue)}}))}/>
+                    <Card picture={family} name="family" value1={5} value2={10} value3={0} label1="Mort" label2="Rêve" label3="Crainte" onChange={(e)=> setValue(value =>({...value, ...{family: parseInt(e.target.defaultValue)}}))}/>
+                    <Card picture={train} name="train" value1={0} value2={5} value3={10} label1="Confiance" label2="Désespoir" label3="Vacances" onChange={(e)=> setValue(value =>({...value, ...{train: parseInt(e.target.defaultValue)}}))}/>
                 </CardGrid>
                 
                 <CardButton type="submit">Valider votre réponse en cliquant ICI</CardButton>

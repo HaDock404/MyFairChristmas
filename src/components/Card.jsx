@@ -46,7 +46,7 @@ const CardInput = styled.input`
 
 function Card(props) {
     return (
-        <CardTest>
+        <CardTest id={props.id} onChange={props.onChange}>
             <CardBoxImg>
                 <CardImg src={props.picture}/>
             </CardBoxImg>

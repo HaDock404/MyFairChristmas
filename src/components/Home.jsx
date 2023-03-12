@@ -57,6 +57,7 @@ const CardButon = styled(Link)`
         width: 200px;
         height: 50px;
         box-shadow: 4px 8px 18px 0px #0B325E;
+        background-color: #bd0404;
     }
 `
 
@@ -68,7 +69,7 @@ function Home() {
                 <CardAuthor>Kim Jong-Un</CardAuthor>
             </CardSectionQuote>
             <CardSentence>Mais, votre neveu, vos enfants, vos petits enfants, méritent-ils vraiment leurs cadeaux cette année ?</CardSentence>
-            <CardButon to="/">Nos offres</CardButon>
+            <CardButon to="/offre">Nos offres</CardButon>
         </CardHome>
     )
 }

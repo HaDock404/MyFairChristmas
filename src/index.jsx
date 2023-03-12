@@ -16,8 +16,8 @@ import Bodybis from './components/Bodybis';
 import Footer from './components/Footer';
 import Quizz from './pages/Quizz';
 
-import CardOffer from './components/CardOffer';
-
+import Offer from './pages/Offer';
+import Result from './pages/Result';
 import Error from './pages/Error';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -27,7 +27,8 @@ root.render(
         <Routes>
           <Route path="/" element={<><Header/><Home/><Body/><Bodybis/><Footer/></>}/>
           <Route path="/positionnement" element={<><Header/><Quizz/><Footer/></>}/>
-          <Route path="/offre" element={<><Header/><CardOffer/><Footer/></>}/>
+          <Route path="/offre" element={<><Header/><Offer/><Footer/></>}/>
+          <Route path="/resultat" element={<><Header/><Result/><Footer/></>}/>
           <Route path="/*" element={<><Header/><Error/><Footer/></>}/>
         </Routes>
   </BrowserRouter>,

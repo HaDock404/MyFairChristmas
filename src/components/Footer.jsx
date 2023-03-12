@@ -7,7 +7,7 @@ const CardFooter = styled.footer`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255,32,20,1);
+    background-color: #ed4545;
     color: black;
 `
 

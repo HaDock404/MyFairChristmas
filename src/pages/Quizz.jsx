@@ -9,8 +9,10 @@ import knife from '../assets/knife.png'
 import family from '../assets/family.png'
 import train from '../assets/train.jpeg'
 
+import { useEffect } from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 
 const CardArticle = styled.article`
     display: flex;
@@ -55,27 +57,44 @@ const CardButton = styled.button`
     color: white;
     font-weight: 1000;
     padding: 20px;
+    cursor: pointer;
+    :hover {
+        background-color: #42f560;
+    }
 `
 
 function Quizz() {
 
     const [sum, setSum] = useState(0)
+    const [submit, setSubmit] = useState(false)
     const [value, setValue] = useState({ gender: 0, island: 0, animal: 0, knife: 0, family: 0, train: 0})
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
      const navigate = useNavigate();
 
-    function submit(e) {
+    function Submit(e) {
         e.preventDefault()
+        setSubmit(true)
         setSum(sum + value.gender + value.island + value.animal + value.knife + value.family + value.train)
-        return navigate('/')
     }
+
+    useEffect(()=>{
+        if(submit) {
+            return navigate(`/resultat?iq=${sum}`)
+        }
+    },[sum] )
     
     console.log(value)
     
     return (
         <CardArticle>
             <CardTitle>Cochez la réponse qui correspond le mieux à l'enfant. Répondez rapidement et honnêtement.</CardTitle>
-            <CardForm onSubmit={submit}>
+            <CardForm onSubmit={Submit}>
                 <CardGrid>
                     <Card picture={gender} id="test" name="gender" value1={0} value2={10} value3={5} label1="Géométrie" label2="Genre" label3="Vaisselle" onChange={(e)=> setValue(value =>({...value, ...{gender: parseInt(e.target.defaultValue)}}))}/>
                     <Card picture={island} name="island" value1={5} value2={10} value3={0} label1="Fuite" label2="Solitude" label3="Télé-réalité" onChange={(e)=> setValue(value =>({...value, ...{island: parseInt(e.target.defaultValue)}}))}/>

@@ -13,6 +13,7 @@ const StyledGlobalStyle = createGlobalStyle`
         background-color: white;
         max-width: 100%;
         overflow-x: hidden;
+        font-family: 'Roboto', sans-serif;
     }
     `
 

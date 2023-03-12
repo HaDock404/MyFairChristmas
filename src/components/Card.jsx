@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-import dog from '../assets/dog.png'
-
 const CardTest = styled.article`
     width: 350px;
     height: 200px;
@@ -38,6 +36,7 @@ const CardImg = styled.img`
 const CardLabel = styled.label`
     margin: 10px;
     font-weight: bold;
+    cursor: pointer;
 `
 
 const CardInput = styled.input`

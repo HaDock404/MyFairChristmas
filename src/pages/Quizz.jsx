@@ -8,7 +8,9 @@ import island from '../assets/island.jpeg'
 import knife from '../assets/knife.png'
 import family from '../assets/family.png'
 import train from '../assets/train.jpeg'
+
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 const CardArticle = styled.article`
     display: flex;
@@ -60,9 +62,12 @@ function Quizz() {
     const [sum, setSum] = useState(0)
     const [value, setValue] = useState({ gender: 0, island: 0, animal: 0, knife: 0, family: 0, train: 0})
 
+     const navigate = useNavigate();
+
     function submit(e) {
         e.preventDefault()
         setSum(sum + value.gender + value.island + value.animal + value.knife + value.family + value.train)
+        return navigate('/')
     }
     
     console.log(value)

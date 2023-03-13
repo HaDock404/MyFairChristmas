@@ -8,7 +8,8 @@ import CardOffer from "../components/CardOffer"
 const PageGlobalOffer = styled.article`
 @media only screen and (min-width: 768px) {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: auto;
+    min-height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +18,7 @@ const PageGlobalOffer = styled.article`
 @media only screen and (max-width: 767px) {
     width: 100%;
     height: auto;
+    min-height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
     justify-content: center;

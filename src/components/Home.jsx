@@ -69,6 +69,7 @@ const CardButon = styled(Link)`
     font-size: 30px;
     border-radius: 16px; 
     box-shadow: 2px 5px 16px 0px #0B325E;
+    margin-bottom: 30px;
     :hover {
         box-shadow: 4px 8px 18px 0px #0B325E;
         background-color: #bd0404;
@@ -88,6 +89,7 @@ const CardButon = styled(Link)`
     font-size: 20px;
     border-radius: 16px; 
     box-shadow: 2px 5px 16px 0px #0B325E;
+    margin-bottom: 30px;
     :hover {
         box-shadow: 4px 8px 18px 0px #0B325E;
         background-color: #bd0404;

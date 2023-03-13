@@ -24,52 +24,111 @@ const CardSection = styled.section`
 `
 
 const CardSectionIntro = styled.section`
+@media only screen and (min-width: 1200px) {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+@media only screen and (max-width: 1199px) {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 `
 
 const CardIntro = styled.h3`
+@media only screen and (min-width: 1200px) {
     text-align: center;
     color: #686868;
     font-size: 40px;
     font-weight: bold;
     width: 40%;
     padding: 30px;
+}
+@media only screen and (max-width: 1199px) {
+    text-align: center;
+    color: #686868;
+    font-size: 20px;
+    font-weight: bold;
+    width: 90%;
+    padding: 10px;
+}
 `
 
 const CardExplanation = styled.div`
+@media only screen and (min-width: 1200px) {
     width: 60%;
     font-size: 30px;
     padding: 50px;
     color: grey;
+}
+@media only screen and (max-width: 1199px) {
+    width: 90%;
+    font-size: 16px;
+    padding: 10px;
+    color: grey;
+}
 `
 
 const CardMotivation = styled.h3`
+@media only screen and (min-width: 768px) {
     color: red;
     font-size: 2rem;
     text-decoration: underline;
     font-size: 60px;
     margin: 0px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 767px) {
+    color: red;
+    font-size: 2rem;
+    text-decoration: underline;
+    font-size: 30px;
+    margin: 0px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 `
 
 const CardMotivationLink = styled(Link)`
+@media only screen and (min-width: 768px) {
     background-color: red;
     text-align: center;
-    font-size: 1.5rem;
     text-shadow: 5px 5px 15px white;
     font-weight: 1000;
     margin: 30px;
     color: white;
     padding: 20px;
     font-size: 40px;
+}
+@media only screen and (max-width: 767px) {
+    background-color: red;
+    text-align: center;
+    text-shadow: 5px 5px 15px white;
+    font-weight: 1000;
+    margin: 30px;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
 `
 
 const CardStrong = styled.strong`
+@media only screen and (min-width: 768px) {
     font-size: 60px;
+}
+@media only screen and (max-width: 767px) {
+    font-size: 30px;
+}
 `
 
 function Body() {

@@ -23,11 +23,20 @@ const CardArticle = styled.article`
 `
 
 const CardTitle = styled.h2`
+@media only screen and (min-width: 768px) {
     border: 4px solid red;
     padding: 20px;
     color: red;
     font-size: 40px;
     text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    border: 4px solid red;
+    padding: 20px;
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
 `
 
 const CardForm = styled.form`
@@ -38,13 +47,24 @@ const CardForm = styled.form`
 `
 
 const CardGrid = styled.section`
+@media only screen and (min-width: 768px) {
     width: 100%;
     max-width: 1000px;
     display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
-    justify-items: center;    
+    justify-items: center;   
+}
+@media only screen and (max-width: 767px) {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+    justify-items: center;   
+} 
 `
 
 const CardButton = styled.button`

@@ -18,11 +18,18 @@ const CardSectionQuote = styled.section`
 `
 
 const CardQuote = styled.h3`
+@media only screen and (min-width: 768px) {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     color: grey;
     text-align: center;
-
+}
+@media only screen and (max-width: 767px) {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: grey;
+    text-align: center;
+}
 `
 
 const CardAuthor = styled.h5`
@@ -33,13 +40,22 @@ const CardAuthor = styled.h5`
 `
 
 const CardSentence = styled.h3`
+@media only screen and (min-width: 768px) {
     font-size: 60px;
     color: rgba(255,32,20,1);
     text-align: center;
     font-family: 'Arima', cursive;
+}
+@media only screen and (max-width: 767px) {
+    font-size: 40px;
+    color: rgba(255,32,20,1);
+    text-align: center;
+    font-family: 'Arima', cursive;
+}
 `
 
 const CardButon = styled(Link)`
+@media only screen and (min-width: 768px) {
     width: 200px;
     height: 50px;
     background-color: red;
@@ -54,11 +70,29 @@ const CardButon = styled(Link)`
     border-radius: 16px; 
     box-shadow: 2px 5px 16px 0px #0B325E;
     :hover {
-        width: 200px;
-        height: 50px;
         box-shadow: 4px 8px 18px 0px #0B325E;
         background-color: #bd0404;
     }
+}
+@media only screen and (max-width: 767px) {
+    width: 150px;
+    height: 30px;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 16px; 
+    box-shadow: 2px 5px 16px 0px #0B325E;
+    :hover {
+        box-shadow: 4px 8px 18px 0px #0B325E;
+        background-color: #bd0404;
+    }
+}
 `
 
 function Home() {

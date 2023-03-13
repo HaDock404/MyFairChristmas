@@ -4,12 +4,22 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Cardoffer = styled.article`
+@media only screen and (min-width: 425px) {
     width: 350px;
     height: 450px;
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
     position: relative;
+}
+@media only screen and (max-width: 424px) {
+    width: 270px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+}
 `
 
 const CardTitle = styled.h3`

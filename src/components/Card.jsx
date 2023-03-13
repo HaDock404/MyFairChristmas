@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 const CardTest = styled.article`
+@media only screen and (min-width: 375px) {
     width: 350px;
     height: 200px;
     background-color: #dbdbdb;
@@ -10,6 +11,18 @@ const CardTest = styled.article`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+@media only screen and (max-width: 374px) {
+    width: 300px;
+    height: 200px;
+    background-color: #dbdbdb;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 `
 
 const CardBoxImg = styled.div`
